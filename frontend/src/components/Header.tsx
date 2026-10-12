@@ -15,36 +15,11 @@ const Header: React.FC = () => {
             to="/"
             className="flex items-center gap-2.5 transition-opacity hover:opacity-70"
           >
-            {/* 苹果风格圆角方形 App 图标：渐变底 + 居中信封图形，与 favicon.svg 保持完全一致。
-                信封主体 rect(x=7,y=10,w=26,h=20) 的几何中心正好是 (20,20)，
-                即整个 40x40 图标的正中心；翻盖三角形用 clipPath 裁剪，避免尖角凸出圆角边界 */}
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="shrink-0"
-            >
-              <defs>
-                <linearGradient id="logoBg" x1="3" y1="1" x2="38" y2="39" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#5ec2ff" />
-                  <stop offset="50%" stopColor="#0a84ff" />
-                  <stop offset="100%" stopColor="#5b4fe0" />
-                </linearGradient>
-                <linearGradient id="logoSheen" x1="20" y1="0" x2="20" y2="16" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-                </linearGradient>
-                <clipPath id="envelopeClip">
-                  <rect x="7" y="10" width="26" height="20" rx="4" />
-                </clipPath>
-              </defs>
-              <rect x="0" y="0" width="40" height="40" rx="13" fill="url(#logoBg)" />
-              <rect x="0" y="0" width="40" height="40" rx="13" fill="url(#logoSheen)" />
-              <rect x="7" y="10" width="26" height="20" rx="4" fill="white" />
-              <path d="M7 10 L20 21 L33 10 Z" fill="#cfe0ff" clipPath="url(#envelopeClip)" />
-            </svg>
+            <img
+              src="/favicon.svg"
+              alt="ZMAIL"
+              className="w-8 h-8 shrink-0"
+            />
             <span className="gradient-text text-xl font-extrabold tracking-tight">
               {t('app.shortTitle')}
             </span>
